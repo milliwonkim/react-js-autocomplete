@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  margin: 50px auto;
+  width: fit-content;
+}
+
+.input {
+  &__group {
+    align-items: center;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    display: flex;
+    min-height: 2em;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  &__text {
+    border: none;
+    color: #0080ff;
+    font-size: 1em;
+    height: 100%;
+    outline: 0;
+    padding: 5px 0 5px 8px;
+
+    &::placeholder {
+      color: #dddddd;
+    }
+  }
+
+  &__clear {
+    border: none;
+    outline: none;
+    visibility: hidden;
+
+    &.show {
+      color: #aaaaaa;
+      cursor: pointer;
+      visibility: visible;
+    }
+  }
+
+  &__autocomplete-items {
+    background-color: #e6f2ff;
+    border-radius: 5px;
+    list-style-type: none;
+    margin: 0;
+    max-height: 11em;
+    overflow-y: scroll;
+    padding: 0;
+    position: absolute;
+    top: calc(100% + 1px);
+    width: calc(100%);
+    z-index: 99;
+  }
+
+  &__autocomplete-item {
+    cursor: pointer;
+    line-height: 1em;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 0.5em 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &.selected {
+      background-color: #d3d3d3;
+    }
+  }
+}
